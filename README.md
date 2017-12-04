@@ -1,1 +1,3 @@
-#M1202 - PHP & algo
+# M1202 - Algorithmique et Programmation
+
+
