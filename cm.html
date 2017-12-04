@@ -4,7 +4,9 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title></title>
+  <meta name="author" content="Jérôme Landré - jerome.landre@univ-reims.fr">
+  <meta name="dcterms.date" content="2017-01-01">
+  <title>M1202 - Algorithmique et programmation - IUT Troyes - URCA</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -49,26 +51,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <![endif]-->
 </head>
 <body>
-<h3 id="m1202---algorithmique-et-programmation">M1202 - Algorithmique et programmation</h3>
-<h4 id="jérôme-landré---jerome.landreuniv-reims.fr">Jérôme Landré - jerome.landre@univ-reims.fr</h4>
-<h5 id="université-de-champagne---iut-de-troyes---20152016">Université de Champagne - IUT de Troyes - 2015/2016</h5>
-<p><img src="img/logo_urca.jpg" title="Université de Reims Champagne-Ardenne" /> <img src="img/logo_mmi.png" title="Institut Universitaire de Technologie de Troyes" /></p>
-<h1 id="m1202---algorithmique-et-programmation-1">M1202 - Algorithmique et Programmation</h1>
+<header>
+<h1 class="title">M1202 - Algorithmique et programmation - IUT Troyes - URCA</h1>
+<h2 class="author">Jérôme Landré - jerome.landre@univ-reims.fr <img src="img/logo_urca.jpg" title="Université de Reims Champagne-Ardenne" /> <img src="img/logo_mmi.png" title="Institut Universitaire de Technologie de Troyes" /></h2>
+<h3 class="date">2017</h3>
+</header>
+<h1 id="m1202---algorithmique-et-programmation">M1202 - Algorithmique et Programmation</h1>
 <h2 id="introduction-à-la-programmation-graphique-le-langage-logo">Introduction à la programmation graphique : le langage LOGO</h2>
 <h3 id="page-logo">Page LOGO :</h3>
 <p>Afin de découvrir comment fonctionne la programmation, on va étudier un langage simple de programmation graphique :</p>
 <ul>
 <li>Le site se trouve ici : http://www.calormen.com/jslogo/</li>
 </ul>
-<h2 id="variables">Variables</h2>
-<h2 id="types-de-données">Types de données</h2>
-<h2 id="représentation-des-données">Représentation des données</h2>
-<h2 id="programmation-structurée">Programmation structurée</h2>
-<h2 id="structures-de-contrôle">Structures de contrôle</h2>
-<h2 id="trace-dun-algorithme">Trace d'un algorithme</h2>
-<h2 id="fonctions">Fonctions</h2>
-<h2 id="analyse-et-décomposition-de-problèmes">Analyse et décomposition de problèmes</h2>
-<h3 id="table-des-matières">Table des matières</h3>
+<h1 id="variables">Variables</h1>
+<h1 id="types-de-données">Types de données</h1>
+<h1 id="représentation-des-données">Représentation des données</h1>
+<h1 id="programmation-structurée">Programmation structurée</h1>
+<h1 id="structures-de-contrôle">Structures de contrôle</h1>
+<h1 id="trace-dun-algorithme">Trace d'un algorithme</h1>
+<h1 id="fonctions">Fonctions</h1>
+<h1 id="analyse-et-décomposition-de-problèmes">Analyse et décomposition de problèmes</h1>
+<h1 id="table-des-matières">Table des matières</h1>
 <ul>
 <li>Présentation et organisation</li>
 <li>Premier programme en PHP</li>
@@ -83,7 +86,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>4d) Opérateurs</li>
 </ul>
 <h1 id="présentation-et-organisation">0) Présentation et organisation</h1>
-<h3 id="présentation">Présentation</h3>
+<h1 id="présentation">Présentation</h1>
 <ul>
 <li>Jérôme Landré</li>
 <li>Enseignant-chercheur en traitement d'images</li>
@@ -92,7 +95,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <figure>
 <img src="img/site-jl.png" title="site personnel" />
 </figure>
-<h3 id="organisation">Organisation</h3>
+<h1 id="organisation">Organisation</h1>
 <ul>
 <li>4 cours magistraux (1h30)</li>
 <li>5 travaux dirigés (1h30)</li>
@@ -106,7 +109,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Comprendre les bases de l'algorithmique</li>
 </ul></li>
 </ul>
-<h3 id="quelques-règles-à-respecter">Quelques règles à respecter</h3>
+<h1 id="quelques-règles-à-respecter">Quelques règles à respecter</h1>
 <ul>
 <li>Travail attendu :
 <ul>
@@ -122,21 +125,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul>
 <h1 id="premier-programme-en-php">1. Premier programme en PHP</h1>
-<h3 id="premier-programme-en-php-1">Premier programme en PHP</h3>
+<h1 id="premier-programme-en-php-1">Premier programme en PHP</h1>
 <ul>
 <li>Le programme &quot;Hello World!&quot;</li>
 </ul>
 <div class="sourceCode" id="moncode000"><pre class="sourceCode php"><code class="sourceCode php"><span class="kw">&lt;?php</span>
     <span class="fu">echo</span> <span class="st">&quot;Hello World!&quot;</span><span class="ot">;</span>
 <span class="kw">?&gt;</span></code></pre></div>
-<h3 id="section"></h3>
+<h1 id="section"></h1>
 <ul>
 <li>Ce programme est le <strong>code source</strong></li>
 <li>Il doit être <strong>interprété</strong> pour voir son résultat</li>
 </ul>
 <p>code source ---&gt; Interpréteur ---&gt; résultat</p>
 <h1 id="introduction-à-html5">2. Introduction à HTML5</h1>
-<h3 id="introduction-à-html5-1">Introduction à HTML5</h3>
+<h1 id="introduction-à-html5-1">Introduction à HTML5</h1>
 <ul>
 <li>HTML5 : langage de description de pages,</li>
 <li>langage à <strong>balises</strong>,</li>
@@ -155,7 +158,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>Code généré : <a href="http://195.83.128.55/~jlandre/docs/mmi/m1202/code001.html" class="uri">http://195.83.128.55/~jlandre/docs/mmi/m1202/code001.html</a></li>
 </ul>
-<h3 id="section-1"></h3>
+<h1 id="section-1"></h1>
 <ul>
 <li>balises ouvrantes/fermantes</li>
 <li>des propriétés de balise : propriété=valeur</li>
@@ -174,7 +177,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>Code généré : <a href="http://195.83.128.55/~jlandre/docs/mmi/m1202/code001.html" class="uri">http://195.83.128.55/~jlandre/docs/mmi/m1202/code001.html</a></li>
 </ul>
-<h3 id="section-2"></h3>
+<h1 id="section-2"></h1>
 <div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></code></pre></div>
 <ul>
 <li>&quot;DOCTYPE&quot; (type de document) :

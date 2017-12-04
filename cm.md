@@ -1,9 +1,9 @@
-### M1202 - Algorithmique et programmation
-#### Jérôme Landré - jerome.landre@univ-reims.fr
-##### Université de Champagne - IUT de Troyes - 2015/2016 
+---
+author: Jérôme Landré - jerome.landre@univ-reims.fr ![](img/logo_urca.jpg "Université de Reims Champagne-Ardenne") ![](img/logo_mmi.png "Institut Universitaire de Technologie de Troyes")
+title: M1202 - Algorithmique et programmation - IUT Troyes - URCA
+date: 2017
+---
 
-
-![](img/logo_urca.jpg "Université de Reims Champagne-Ardenne") ![](img/logo_mmi.png "Institut Universitaire de Technologie de Troyes")
 
 
 # M1202 - Algorithmique et Programmation
@@ -18,27 +18,27 @@ Afin de découvrir comment fonctionne la programmation, on va étudier un langag
 
 
 
-## Variables
+# Variables
 
-## Types de données
+# Types de données
 
-## Représentation des données
+# Représentation des données
 
-## Programmation structurée
+# Programmation structurée
 
-## Structures de contrôle
+# Structures de contrôle
 
-## Trace d'un algorithme
+# Trace d'un algorithme
 
-## Fonctions
+# Fonctions
 
-## Analyse et décomposition de problèmes
-
-
+# Analyse et décomposition de problèmes
 
 
 
-### Table des matières
+
+
+# Table des matières
 
 * Présentation et organisation
 * Premier programme en PHP
@@ -53,7 +53,7 @@ Afin de découvrir comment fonctionne la programmation, on va étudier un langag
 
 # 0) Présentation et organisation
 
-### Présentation
+# Présentation
 
 * Jérôme Landré
 * Enseignant-chercheur en traitement d'images
@@ -61,7 +61,7 @@ Afin de découvrir comment fonctionne la programmation, on va étudier un langag
 
 ![](img/site-jl.png "site personnel")
 
-### Organisation
+# Organisation
 
 * 4 cours magistraux (1h30)
 * 5 travaux dirigés (1h30)
@@ -73,7 +73,7 @@ Afin de découvrir comment fonctionne la programmation, on va étudier un langag
 	+ Traiter des formulaires HTML en PHP
 	+ Comprendre les bases de l'algorithmique
 
-### Quelques règles à respecter
+# Quelques règles à respecter
 
 * Travail attendu :
 	+ Lire le CM, avant d'arriver en TD/TP
@@ -88,7 +88,7 @@ d'écouteurs)
 
 # 1. Premier programme en PHP
 	
-### Premier programme en PHP
+# Premier programme en PHP
 
 - Le programme "Hello World!"
 
@@ -98,7 +98,7 @@ d'écouteurs)
 ?>
 ~~~~~~
 
-### 	
+#	
 
 - Ce programme est le **code source**
 - Il doit être **interprété** pour voir son résultat
@@ -111,7 +111,7 @@ code source   ---> Interpréteur ---> résultat
 
 
 
-### Introduction à HTML5
+# Introduction à HTML5
  
 * HTML5 : langage de description de pages,
 * langage à **balises**,
@@ -133,7 +133,7 @@ code source   ---> Interpréteur ---> résultat
 * Code généré : <http://195.83.128.55/~jlandre/docs/mmi/m1202/code001.html>
 
 
-### 
+# 
  
 * balises ouvrantes/fermantes
 * des propriétés de balise : propriété=valeur
@@ -156,7 +156,7 @@ code source   ---> Interpréteur ---> résultat
 
 
 
-### 
+# 
 
 ~~~~~~ {.html}
 <!DOCTYPE html>
