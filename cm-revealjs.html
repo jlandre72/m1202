@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title></title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="nightjl.css"/>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="m1202---algorithmique-et-programmation" class="slide level3">
+<h1>M1202 - Algorithmique et programmation</h1>
+<h4 id="jérôme-landré---jerome.landreuniv-reims.fr">Jérôme Landré - jerome.landre@univ-reims.fr</h4>
+<h5 id="université-de-champagne---iut-de-troyes---20152016">Université de Champagne - IUT de Troyes - 2015/2016</h5>
+<p><img src="img/logo_urca.jpg" title="Université de Reims Champagne-Ardenne" /> <img src="img/logo_mmi.png" title="Institut Universitaire de Technologie de Troyes" /></p>
+</section>
+<section><section id="m1202---algorithmique-et-programmation-1" class="titleslide slide level1"><h1>M1202 - Algorithmique et Programmation</h1></section><section><section id="introduction-à-la-programmation-graphique-le-langage-logo" class="titleslide slide level2"><h1>Introduction à la programmation graphique : le langage LOGO</h1></section><section id="page-logo" class="slide level3">
+<h1>Page LOGO :</h1>
+<p>Afin de découvrir comment fonctionne la programmation, on va étudier un langage simple de programmation graphique :</p>
+<ul>
+<li>Le site se trouve ici : http://www.calormen.com/jslogo/</li>
+</ul>
+</section></section><section><section id="variables" class="titleslide slide level2"><h1>Variables</h1></section></section><section><section id="types-de-données" class="titleslide slide level2"><h1>Types de données</h1></section></section><section><section id="représentation-des-données" class="titleslide slide level2"><h1>Représentation des données</h1></section></section><section><section id="programmation-structurée" class="titleslide slide level2"><h1>Programmation structurée</h1></section></section><section><section id="structures-de-contrôle" class="titleslide slide level2"><h1>Structures de contrôle</h1></section></section><section><section id="trace-dun-algorithme" class="titleslide slide level2"><h1>Trace d'un algorithme</h1></section></section><section><section id="fonctions" class="titleslide slide level2"><h1>Fonctions</h1></section></section><section><section id="analyse-et-décomposition-de-problèmes" class="titleslide slide level2"><h1>Analyse et décomposition de problèmes</h1></section><section id="table-des-matières" class="slide level3">
+<h1>Table des matières</h1>
+<ul>
+<li>Présentation et organisation</li>
+<li>Premier programme en PHP</li>
+<li>Introduction à HTML5</li>
+<li>Modèle Client/Serveur</li>
+<li><ol start="4" type="1">
+<li>PHP</li>
+</ol></li>
+<li>4a) L'instruction &quot;echo&quot;</li>
+<li>4b) Les instructions de PHP</li>
+<li>4c) Variables et affectation</li>
+<li>4d) Opérateurs</li>
+</ul>
+</section></section></section>
+<section><section id="présentation-et-organisation" class="titleslide slide level1"><h1>0) Présentation et organisation</h1></section><section id="présentation" class="slide level3">
+<h1>Présentation</h1>
+<ul>
+<li>Jérôme Landré</li>
+<li>Enseignant-chercheur en traitement d'images</li>
+<li>http://jerome.landre.pagesperso-orange.fr</li>
+</ul>
+<figure>
+<img src="img/site-jl.png" title="site personnel" />
+</figure>
+</section><section id="organisation" class="slide level3">
+<h1>Organisation</h1>
+<ul>
+<li>4 cours magistraux (1h30)</li>
+<li>5 travaux dirigés (1h30)</li>
+<li>5 travaux pratiques (1h30)</li>
+<li>2 évaluations : 1 écrite (60%) et 1 TP (40%)</li>
+<li>Objectifs du cours :
+<ul>
+<li>Connaître les bases du langage PHP</li>
+<li>Analyser et créer des programmes PHP « simples »</li>
+<li>Traiter des formulaires HTML en PHP</li>
+<li>Comprendre les bases de l'algorithmique</li>
+</ul></li>
+</ul>
+</section><section id="quelques-règles-à-respecter" class="slide level3">
+<h1>Quelques règles à respecter</h1>
+<ul>
+<li>Travail attendu :
+<ul>
+<li>Lire le CM, avant d'arriver en TD/TP</li>
+<li>Lire les TDs/TPs précédents avant chaque séance de TD/TP</li>
+<li>Préparer les exercices de TD à l'avance</li>
+</ul></li>
+<li>En CM, TD et TP :
+<ul>
+<li>Pas de téléphone, pas de musique (donc pas d'écouteurs)</li>
+<li>On ne parle pas, on chuchote</li>
+<li>On fait le travail demandé</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="premier-programme-en-php" class="titleslide slide level1"><h1>1. Premier programme en PHP</h1></section><section id="premier-programme-en-php-1" class="slide level3">
+<h1>Premier programme en PHP</h1>
+<ul>
+<li>Le programme &quot;Hello World!&quot;</li>
+</ul>
+<div class="sourceCode" id="moncode000"><pre class="sourceCode php"><code class="sourceCode php"><span class="kw">&lt;?php</span>
+    <span class="fu">echo</span> <span class="st">&quot;Hello World!&quot;</span><span class="ot">;</span>
+<span class="kw">?&gt;</span></code></pre></div>
+</section><section id="section" class="slide level3">
+<h1></h1>
+<ul>
+<li>Ce programme est le <strong>code source</strong></li>
+<li>Il doit être <strong>interprété</strong> pour voir son résultat</li>
+</ul>
+<p>code source ---&gt; Interpréteur ---&gt; résultat</p>
+</section></section>
+<section><section id="introduction-à-html5" class="titleslide slide level1"><h1>2. Introduction à HTML5</h1></section><section id="introduction-à-html5-1" class="slide level3">
+<h1>Introduction à HTML5</h1>
+<ul>
+<li>HTML5 : langage de description de pages,</li>
+<li>langage à <strong>balises</strong>,</li>
+<li>dans un fichier de type &quot;texte&quot;.</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+<ul>
+<li>Code généré : <a href="http://195.83.128.55/~jlandre/docs/mmi/m1202/code001.html" class="uri">http://195.83.128.55/~jlandre/docs/mmi/m1202/code001.html</a></li>
+</ul>
+</section><section id="section-1" class="slide level3">
+<h1></h1>
+<ul>
+<li>balises ouvrantes/fermantes</li>
+<li>des propriétés de balise : propriété=valeur</li>
+<li>balises auto-fermantes</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+<ul>
+<li>Code généré : <a href="http://195.83.128.55/~jlandre/docs/mmi/m1202/code001.html" class="uri">http://195.83.128.55/~jlandre/docs/mmi/m1202/code001.html</a></li>
+</ul>
+</section><section id="section-2" class="slide level3">
+<h1></h1>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></code></pre></div>
+<ul>
+<li>&quot;DOCTYPE&quot; (type de document) :
+<ul>
+<li>ne fait pas partie du code HTML,</li>
+<li>définit un document HTML5.</li>
+</ul></li>
+<li>Balise de début de code HTML :</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></code></pre></div>
+<ul>
+<li>Balise de fin de code HTML :</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;/html&gt;</span></code></pre></div>
+</section><section id="en-tête-du-document" class="slide level3">
+<h1>En-tête du document</h1>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    ...
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+<ul>
+<li>Balise de début d'en-tête :</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;head&gt;</span></code></pre></div>
+<ul>
+<li>Balise de fin d'en-tête :</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;/head&gt;</span></code></pre></div>
+</section><section id="en-tête-du-document-1" class="slide level3">
+<h1>En-tête du document</h1>
+<ul>
+<li>L'en-tête contient des informations sur le document, les inclusions de feuilles de style CSS, les inclusions de fichiers javascript...</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    ...
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+<ul>
+<li>L'en-tête contient un titre :</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></code></pre></div>
+<ul>
+<li>L'en-tête contient une méta-donnée (le codage du fichier HTML en utf-8, pour autoriser la reconnaissance des caractères français) :</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></code></pre></div>
+<ul>
+<li>&quot;charset&quot; est un <em>attribut</em> ou une <em>propriété</em> de la balise.</li>
+<li>Elle est suivie du signe = et d'une chaîne de caractères.</li>
+</ul>
+</section><section id="corps-du-document" class="slide level3">
+<h1>Corps du document</h1>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    ...
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+<ul>
+<li>Balise de début de corps de document :</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;body&gt;</span></code></pre></div>
+<ul>
+<li>Balise de fin de corps de document :</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;/body&gt;</span></code></pre></div>
+</section><section id="corps-du-document-1" class="slide level3">
+<h1>Corps du document</h1>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    ...
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+<ul>
+<li>Le corps de document contient un paragraphe :</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></code></pre></div>
+</section><section id="remarques-générales" class="slide level3">
+<h1>Remarques générales</h1>
+<ul>
+<li>La balise &lt;meta&gt; peut être fermée comme les autres balises :</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;head&gt;</span>
+        ...
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span><span class="kw">&gt;&lt;/meta&gt;</span>
+    <span class="kw">&lt;/head&gt;</span></code></pre></div>
+<ul>
+<li>Mais comme il n'y a rien entre &lt;meta&gt; et &lt;/meta&gt;, on peut l'écrire de façon plus rapide ainsi :</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">    <span class="kw">&lt;head&gt;</span>
+        ...
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span></code></pre></div>
+</section><section id="remarques-générales-1" class="slide level3">
+<h1>Remarques générales</h1>
+<ul>
+<li>Remarque : les espaces et sauts de lignes ne sont pas interprétés par HTML5</li>
+<li>On aurait pu écrire :</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span><span class="kw">&lt;html&gt;&lt;head&gt;&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+<span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;&lt;/head&gt;&lt;body&gt;</span>
+<span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</span></code></pre></div>
+<ul>
+<li>Avantage : C'est plus court (la taille du fichier est plus petite)</li>
+<li>Inconvénient : c'est illisible et se serait pire avec plus de lignes</li>
+<li>Donc il faut INDENTER le code HTML pour pouvoir le lire facilement !</li>
+</ul>
+</section><section id="remarques-générales-2" class="slide level3">
+<h1>Remarques générales</h1>
+<ul>
+<li>Remarque : les éléments de la page HTML forment un <strong>arbre</strong> !</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+</section><section id="remarques-générales-3" class="slide level3">
+<h1>Remarques générales</h1>
+<ul>
+<li>Remarque : les éléments de la page HTML forment un <strong>arbre</strong> !</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+<pre><code>                html
+    
+    
+        head            body
+    
+    
+    title   meta        p
+    
+    </code></pre>
+</section><section id="remarques-générales-4" class="slide level3">
+<h1>Remarques générales</h1>
+<ul>
+<li>La page est STATIQUE : elle reste toujours la même !</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+</section><section id="remarques-générales-5" class="slide level3">
+<h1>Remarques générales</h1>
+<ul>
+<li>Attention, il ne doit rien y avoir après la balise <code>&lt;/html&gt;</code> !</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span>
+Bonjour !</code></pre></div>
+</section><section id="résumé-sur-html5" class="slide level3">
+<h1>Résumé sur HTML5</h1>
+<ul>
+<li>HTML5 est un langage à <strong>balises</strong></li>
+<li>Les pages sont STATIQUES (sans javascript)</li>
+<li>Chaque balise ouverte DOIT être fermée !
+<ul>
+<li>&lt;html&gt; ... &lt;/html&gt;</li>
+<li>&lt;head&gt; ... &lt;/head&gt;</li>
+<li>&lt;body&gt; ... &lt;/body&gt;</li>
+<li>&lt;meta charset=&quot;utf-8&quot; /&gt; ou &lt;meta charset=&quot;utf-8&quot;&gt;&lt;/meta&gt;</li>
+<li>&lt;p&gt; ... &lt;/p&gt;</li>
+</ul></li>
+<li>Il ne doit rien y avoir après le <code>&lt;/html&gt;</code></li>
+<li>Il FAUT INDENTER le code pour qu'il soit lisible !</li>
+</ul>
+</section></section>
+<section><section id="modèle-clientserveur" class="titleslide slide level1"><h1>2. Modèle Client/Serveur</h1></section><section id="le-modèle-clientserveur" class="slide level3">
+<h1>Le modèle client/serveur</h1>
+<ul>
+<li>Sur Internet :
+<ul>
+<li>le <strong>serveur</strong> propose des ressources aux internautes,</li>
+<li>le <strong>client</strong> demande à récupérer ces ressources.</li>
+</ul></li>
+</ul>
+<figure>
+<img src="img/client-serveur-html1.svg" alt="Modèle client/serveur pour un fichier HTML." /><figcaption>Modèle client/serveur pour un fichier HTML.</figcaption>
+</figure>
+</section><section id="récupérer-une-page-web" class="slide level3">
+<h1>Récupérer une page web</h1>
+<ul>
+<li>Dans le navigateur (<strong>le client</strong>), on tape une adresse URL (<em>Uniform Resource Locator</em>) : http://195.83.128.55/~jlandre/page.html</li>
+<li>http est le protocole, 195.83.128.55 est le serveur, jlandre est un identifiant d'utilisateur et page.html est le fichier demandé dans la requête</li>
+<li>Le client envoie une requête http au serveur</li>
+<li>Le serveur lui renvoie une (page.html) ou plusieurs réponses (style.css, images jpeg, gif ou png, script javascript...) selon le contenu du fichier HTML</li>
+</ul>
+<figure>
+<img src="img/client-serveur-html2.svg" alt="Modèle client/serveur pour un fichier HTML." /><figcaption>Modèle client/serveur pour un fichier HTML.</figcaption>
+</figure>
+</section></section>
+<section><section id="php" class="titleslide slide level1"><h1>3. PHP</h1></section><section id="cest-quoi-php" class="slide level3">
+<h1>C'est quoi PHP ?</h1>
+<ul>
+<li>Langage de programmation</li>
+<li>Orienté web</li>
+<li>Côté serveur</li>
+<li>Créé en 1994 par Rasmus Lerdorf</li>
+<li>Personal HomePage / Hypertext PreProcessor</li>
+<li>Site officiel : « php.net »</li>
+</ul>
+<figure>
+<img src="img/php.png" alt="Le logo PHP." /><figcaption>Le logo PHP.</figcaption>
+</figure>
+</section><section id="php.net" class="slide level3">
+<h1>php.net</h1>
+<figure>
+<img src="img/php-net.png" alt="Le site officiel de PHP." /><figcaption>Le site officiel de PHP.</figcaption>
+</figure>
+</section><section id="pour-faire-quoi" class="slide level3">
+<h1>Pour faire quoi ?</h1>
+<ul>
+<li>PHP permet :
+<ul>
+<li>de générer des pages web dynamiques sur le serveur avant de les envoyer au client</li>
+<li>de traiter des formulaires HTML dynamiquement<br />
+</li>
+<li>d'accéder aux bases de données d'un serveur<br />
+</li>
+<li>de générer des documents HTML, PDF, Office, zip, images...<br />
+</li>
+<li>de proposer de nombreuses fonctions dans de nombreux domaines différents : dates, bases de données, mathématiques/statistiques, génération d'images...</li>
+</ul></li>
+</ul>
+</section><section id="comment-ça-marche-php" class="slide level3">
+<h1>Comment ça marche PHP ?</h1>
+<ul>
+<li>Le code source PHP va passer dans un moteur PHP (ou interpréteur PHP) qui va exécuter le code source PHP pour produire du code interprété :</li>
+</ul>
+<figure>
+<img src="img/moteur-php.svg" alt="Interpréteur PHP." /><figcaption>Interpréteur PHP.</figcaption>
+</figure>
+</section><section id="outils-nécessaires" class="slide level3">
+<h1>Outils nécessaires</h1>
+<ul>
+<li>Pour développer en PHP, on a besoin :
+<ul>
+<li>d'un éditeur de textes (notepad++ par exemple),</li>
+<li>d'un client ftp (file transfer protocol) pour envoyer les fichiers PHP sur le serveur MMI (qui possède le moteur PHP),</li>
+<li>d'un navigateur Internet pour tester les fichiers PHP sur le client.</li>
+</ul></li>
+</ul>
+<p><img src="img/notepadpp.png" title="Editeur de textes" /><img src="img/filezilla.png" title="Client ftp : Filezilla" /><img src="img/firefox.png" title="Navigateur : Firefox" /></p>
+</section><section id="utilité-de-php" class="slide level3">
+<h1>Utilité de PHP</h1>
+<ul>
+<li>PHP permet :
+<ul>
+<li>d'accéder sur le serveur à des données d'une bases de données</li>
+<li>de gérer l'inclusion de fichiers dans les pages HTML</li>
+<li>de générer des pages HTML paramétrables à la volée</li>
+<li>de modifier les pages renvoyées par le serveur</li>
+</ul></li>
+<li>PHP nécessite un moteur PHP qui va transformer le code source PHP en code interprété</li>
+</ul>
+</section><section id="linstruction-echo" class="slide level3">
+<h1>3.1. L'instruction echo</h1>
+<ul>
+<li>PHP va nous permettre de modifier le contenu de la page renvoyée par le serveur</li>
+<li>On va ajouter du code PHP dans notre fichier en HTML5 : on veut écrire un autre paragraphe dans le fichier HTML</li>
+<li>On ouvre le PHP avec &quot;<code>&lt;?php</code>&quot; et on ferme le PHP avec &quot;<code>?&gt;</code>&quot;</li>
+<li>L'instruction &quot;echo&quot; est suivie d'une <strong>chaîne de caractères</strong></li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;?php</span>
+            echo &#39;Un autre paragraphe...&#39;;
+        <span class="kw">?&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+</section><section id="linstruction-echo-1" class="slide level3">
+<h1>3.1. L'instruction echo</h1>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;?</span>
+            echo &#39;Un autre paragraphe...&#39;;
+        <span class="kw">?&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+</section><section id="linstruction-echo-2" class="slide level3">
+<h1>3.1. L'instruction echo</h1>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;?php</span>
+            echo &#39;Un autre paragraphe...&#39;;
+        <span class="kw">?&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></div>
+</section><section id="exemple-de-maths..." class="slide level3">
+<h1>Exemple de maths...</h1>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></msqrt></mrow><annotation encoding="application/x-tex">f(x)=\sqrt{x^2+1}</annotation></semantics></math></p>
+<p>To produce an HTML/javascript slide show, simply type pandoc -t revealjs -s cm1.txt -o cm1.html</p>
+<div class="sourceCode" id="moncode001" startFrom="1"><table class="sourceCode html numberLines"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="sourceCode"><pre><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span>
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span></code></pre></td></tr></table></div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
