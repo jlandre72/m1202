@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>php_m1202</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="stylejl.css">
+</head>
+<body>
+<section id="php-par-lexemple" class="title-slide slide level1"><h1>PHP par l’exemple</h1></section><section id="jérôme-landré---jerome.landreuniv-reims.fr" class="slide level2">
+<h2>Jérôme Landré - jerome.landre@univ-reims.fr</h2>
+<p>PHP est un langage de programmation côté serveur qui permet de définir des pages webs dynamiques.</p>
+<h3 id="outils-nécessaires">0) Outils nécessaires</h3>
+<p>Pour programmer avec PHP, il est nécessaire de posséder trois outils :</p>
+<ul>
+<li>Un éditeur de textes pour taper le code PHP et l’enregistrer dans un fichier.</li>
+<li>Un interpréteur PHP local ou sur un serveur web.</li>
+<li>Un navigateur pour aller chercher la page contenant le code PHP.</li>
+</ul>
+<h3 id="bonjour-le-monde">1) Bonjour le monde !</h3>
+<p>Le premier programme que nous allons voir est le traditionnel “Hello World!” qui permet d’afficher ce texte à l’écran.</p>
+<div class="sourceCode" id="moncode001" data-startFrom="1"><pre class="sourceCode numberSource numberLines php"><code class="sourceCode php"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="kw">&lt;?php</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a>    <span class="kw">echo</span> <span class="st">&#39;Hello World!&#39;</span><span class="ot">;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a><span class="kw">?&gt;</span></span></code></pre></div>
+<p>Ce programme est très simple, il tient en trois lignes. La première et la dernière ligne, qui sont obligatoires, permettent d’ouvrir et de fermer le code PHP.</p>
+<p>Ce qui se trouve entre ces deux balises spéciales doit donc être du code PHP.</p>
+<p>L’instruction <strong>echo</strong> permet d’afficher quelque chose à l’écran. Le texte “Hello World!” est entouré par des apostrophes et désigne une <em>chaîne de caractères</em>.</p>
+<h3 id="les-commentaires">2) Les commentaires</h3>
+<p>Il est possible avec PHP d’ajouter des commentaires à votre code. Ces commentaires seront lus par PHP mais seront totalement ignorés. Vous pouvez donc mettre dedans toutes les informations que vous jugerez utiles.</p>
+<div class="sourceCode" id="moncode002" data-startFrom="1"><pre class="sourceCode numberSource numberLines php"><code class="sourceCode php"><span id="moncode002-1"><a href="#moncode002-1"></a><span class="kw">&lt;?php</span></span>
+<span id="moncode002-2"><a href="#moncode002-2"></a>    <span class="co">/* Mon programme va afficher le texte </span></span>
+<span id="moncode002-3"><a href="#moncode002-3"></a><span class="co">        Hello World! sur l&#39;écran </span></span>
+<span id="moncode002-4"><a href="#moncode002-4"></a><span class="co">        de l&#39;ordinateur */</span></span>
+<span id="moncode002-5"><a href="#moncode002-5"></a>    <span class="co">// Enfin je l&#39;espère !</span></span>
+<span id="moncode002-6"><a href="#moncode002-6"></a>    <span class="kw">echo</span> <span class="st">&#39;Hello World!&#39;</span><span class="ot">;</span> <span class="co"># ligne qui affiche avec echo</span></span>
+<span id="moncode002-7"><a href="#moncode002-7"></a>    <span class="co"># C&#39;est fini !</span></span>
+<span id="moncode002-8"><a href="#moncode002-8"></a>    </span>
+<span id="moncode002-9"><a href="#moncode002-9"></a><span class="kw">?&gt;</span></span></code></pre></div>
+<p>Il existe des commentaires sur plusieurs lignes et des commentaires sur une seule ligne. Pour un commentaire long sur plusieurs lignes, on utilise “/*” pour débuter le commentaire et “*/” pour le finir.</p>
+<p>Sur une seule ligne, on peut utiliser “//” ou “#”. Le commentaire sera alors situé entre ce caractère de début et ira jusqu’à la fin de la ligne sur laquelle il se trouve.</p>
+<h3 id="section"></h3>
+<ul>
+<li>balises ouvrantes/fermantes</li>
+<li>des propriétés de balise : propriété=valeur</li>
+<li>balises auto-fermantes</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="moncode001-8"><a href="#moncode001-8"></a>        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></span>
+<span id="moncode001-9"><a href="#moncode001-9"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="moncode001-10"><a href="#moncode001-10"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<ul>
+<li>Code généré : <a href="http://195.83.128.55/~jlandre/docs/mmi/m1202/code001.html" class="uri">http://195.83.128.55/~jlandre/docs/mmi/m1202/code001.html</a></li>
+</ul>
+<h3 id="section-1"></h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span></code></pre></div>
+<ul>
+<li>“DOCTYPE” (type de document) :
+<ul>
+<li>ne fait pas partie du code HTML,</li>
+<li>définit un document HTML5.</li>
+</ul></li>
+<li>Balise de début de code HTML :</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
+<ul>
+<li>Balise de fin de code HTML :</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<h3 id="en-tête-du-document">En-tête du document</h3>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a>    ...</span>
+<span id="moncode001-8"><a href="#moncode001-8"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<ul>
+<li>Balise de début d’en-tête :</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">&lt;head&gt;</span></span></code></pre></div>
+<ul>
+<li>Balise de fin d’en-tête :</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">&lt;/head&gt;</span></span></code></pre></div>
+<h3 id="en-tête-du-document-1">En-tête du document</h3>
+<ul>
+<li>L’en-tête contient des informations sur le document, les inclusions de feuilles de style CSS, les inclusions de fichiers javascript…</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a>    ...</span>
+<span id="moncode001-8"><a href="#moncode001-8"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<ul>
+<li>L’en-tête contient un titre :</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1"></a>    <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span></code></pre></div>
+<ul>
+<li>L’en-tête contient une méta-donnée (le codage du fichier HTML en utf-8, pour autoriser la reconnaissance des caractères français) :</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1"></a>    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span></code></pre></div>
+<ul>
+<li>“charset” est un <em>attribut</em> ou une <em>propriété</em> de la balise.</li>
+<li>Elle est suivie du signe = et d’une chaîne de caractères.</li>
+</ul>
+<h3 id="corps-du-document">Corps du document</h3>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    ...</span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<ul>
+<li>Balise de début de corps de document :</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">&lt;body&gt;</span></span></code></pre></div>
+<ul>
+<li>Balise de fin de corps de document :</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">&lt;/body&gt;</span></span></code></pre></div>
+<h3 id="corps-du-document-1">Corps du document</h3>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    ...</span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<ul>
+<li>Le corps de document contient un paragraphe :</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1"></a>    <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<h3 id="remarques-générales">Remarques générales</h3>
+<ul>
+<li>La balise &lt;meta&gt; peut être fermée comme les autres balises :</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>        ...</span>
+<span id="cb11-3"><a href="#cb11-3"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span><span class="kw">&gt;&lt;/meta&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>    <span class="kw">&lt;/head&gt;</span></span></code></pre></div>
+<ul>
+<li>Mais comme il n’y a rien entre &lt;meta&gt; et &lt;/meta&gt;, on peut l’écrire de façon plus rapide ainsi :</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>        ...</span>
+<span id="cb12-3"><a href="#cb12-3"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>    <span class="kw">&lt;/head&gt;</span></span></code></pre></div>
+<h3 id="remarques-générales-1">Remarques générales</h3>
+<ul>
+<li>Remarque : les espaces et sauts de lignes ne sont pas interprétés par HTML5</li>
+<li>On aurait pu écrire :</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span><span class="kw">&lt;html&gt;&lt;head&gt;&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;&lt;/head&gt;&lt;body&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a><span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</span></span></code></pre></div>
+<ul>
+<li>Avantage : C’est plus court (la taille du fichier est plus petite)</li>
+<li>Inconvénient : c’est illisible et se serait pire avec plus de lignes</li>
+<li>Donc il faut INDENTER le code HTML pour pouvoir le lire facilement !</li>
+</ul>
+<h3 id="remarques-générales-2">Remarques générales</h3>
+<ul>
+<li>Remarque : les éléments de la page HTML forment un <strong>arbre</strong> !</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="moncode001-8"><a href="#moncode001-8"></a>        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></span>
+<span id="moncode001-9"><a href="#moncode001-9"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="moncode001-10"><a href="#moncode001-10"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<h3 id="remarques-générales-3">Remarques générales</h3>
+<ul>
+<li>Remarque : les éléments de la page HTML forment un <strong>arbre</strong> !</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="moncode001-8"><a href="#moncode001-8"></a>        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></span>
+<span id="moncode001-9"><a href="#moncode001-9"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="moncode001-10"><a href="#moncode001-10"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<pre><code>                html
+    
+    
+        head            body
+    
+    
+    title   meta        p
+    
+    </code></pre>
+<h3 id="remarques-générales-4">Remarques générales</h3>
+<ul>
+<li>La page est STATIQUE : elle reste toujours la même !</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="moncode001-8"><a href="#moncode001-8"></a>        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></span>
+<span id="moncode001-9"><a href="#moncode001-9"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="moncode001-10"><a href="#moncode001-10"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<h3 id="remarques-générales-5">Remarques générales</h3>
+<ul>
+<li>Attention, il ne doit rien y avoir après la balise <code>&lt;/html&gt;</code> !</li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="moncode001-8"><a href="#moncode001-8"></a>        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></span>
+<span id="moncode001-9"><a href="#moncode001-9"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="moncode001-10"><a href="#moncode001-10"></a><span class="kw">&lt;/html&gt;</span></span>
+<span id="moncode001-11"><a href="#moncode001-11"></a>Bonjour !</span></code></pre></div>
+<h3 id="résumé-sur-html5">Résumé sur HTML5</h3>
+<ul>
+<li>HTML5 est un langage à <strong>balises</strong></li>
+<li>Les pages sont STATIQUES (sans javascript)</li>
+<li>Chaque balise ouverte DOIT être fermée !
+<ul>
+<li>&lt;html&gt; … &lt;/html&gt;</li>
+<li>&lt;head&gt; … &lt;/head&gt;</li>
+<li>&lt;body&gt; … &lt;/body&gt;</li>
+<li>&lt;meta charset=“utf-8” /&gt; ou &lt;meta charset=“utf-8”&gt;&lt;/meta&gt;</li>
+<li>&lt;p&gt; … &lt;/p&gt;</li>
+</ul></li>
+<li>Il ne doit rien y avoir après le <code>&lt;/html&gt;</code></li>
+<li>Il FAUT INDENTER le code pour qu’il soit lisible !</li>
+</ul>
+</section>
+<section id="modèle-clientserveur" class="title-slide slide level1"><h1>2. Modèle Client/Serveur</h1></section><section id="le-modèle-clientserveur" class="slide level3">
+<h3>Le modèle client/serveur</h3>
+<ul>
+<li>Sur Internet :
+<ul>
+<li>le <strong>serveur</strong> propose des ressources aux internautes,</li>
+<li>le <strong>client</strong> demande à récupérer ces ressources.</li>
+</ul></li>
+</ul>
+<figure>
+<img src="img/client-serveur-html1.svg" alt="" /><figcaption>Modèle client/serveur pour un fichier HTML.</figcaption>
+</figure>
+</section><section id="récupérer-une-page-web" class="slide level3">
+<h3>Récupérer une page web</h3>
+<ul>
+<li>Dans le navigateur (<strong>le client</strong>), on tape une adresse URL (<em>Uniform Resource Locator</em>) : http://195.83.128.55/~jlandre/page.html</li>
+<li>http est le protocole, 195.83.128.55 est le serveur, jlandre est un identifiant d’utilisateur et page.html est le fichier demandé dans la requête</li>
+<li>Le client envoie une requête http au serveur</li>
+<li>Le serveur lui renvoie une (page.html) ou plusieurs réponses (style.css, images jpeg, gif ou png, script javascript…) selon le contenu du fichier HTML</li>
+</ul>
+<figure>
+<img src="img/client-serveur-html2.svg" alt="" /><figcaption>Modèle client/serveur pour un fichier HTML.</figcaption>
+</figure>
+</section>
+<section id="php" class="title-slide slide level1"><h1>3. PHP</h1></section><section id="cest-quoi-php" class="slide level3">
+<h3>C’est quoi PHP ?</h3>
+<ul>
+<li>Langage de programmation</li>
+<li>Orienté web</li>
+<li>Côté serveur</li>
+<li>Créé en 1994 par Rasmus Lerdorf</li>
+<li>Personal HomePage / Hypertext PreProcessor</li>
+<li>Site officiel : « php.net »</li>
+</ul>
+<figure>
+<img src="img/php.png" alt="" /><figcaption>Le logo PHP.</figcaption>
+</figure>
+</section><section id="php.net" class="slide level3">
+<h3>php.net</h3>
+<figure>
+<img src="img/php-net.png" alt="" /><figcaption>Le site officiel de PHP.</figcaption>
+</figure>
+</section><section id="pour-faire-quoi" class="slide level3">
+<h3>Pour faire quoi ?</h3>
+<ul>
+<li>PHP permet :
+<ul>
+<li>de générer des pages web dynamiques sur le serveur avant de les envoyer au client</li>
+<li>de traiter des formulaires HTML dynamiquement<br />
+</li>
+<li>d’accéder aux bases de données d’un serveur<br />
+</li>
+<li>de générer des documents HTML, PDF, Office, zip, images…<br />
+</li>
+<li>de proposer de nombreuses fonctions dans de nombreux domaines différents : dates, bases de données, mathématiques/statistiques, génération d’images…</li>
+</ul></li>
+</ul>
+</section><section id="comment-ça-marche-php" class="slide level3">
+<h3>Comment ça marche PHP ?</h3>
+<ul>
+<li>Le code source PHP va passer dans un moteur PHP (ou interpréteur PHP) qui va exécuter le code source PHP pour produire du code interprété :</li>
+</ul>
+<figure>
+<img src="img/moteur-php.svg" alt="" /><figcaption>Interpréteur PHP.</figcaption>
+</figure>
+</section><section id="outils-nécessaires-1" class="slide level3">
+<h3>Outils nécessaires</h3>
+<ul>
+<li>Pour développer en PHP, on a besoin :
+<ul>
+<li>d’un éditeur de textes (notepad++ par exemple),</li>
+<li>d’un client ftp (file transfer protocol) pour envoyer les fichiers PHP sur le serveur MMI (qui possède le moteur PHP),</li>
+<li>d’un navigateur Internet pour tester les fichiers PHP sur le client.</li>
+</ul></li>
+</ul>
+<p><img src="img/notepadpp.png" title="Editeur de textes" /><img src="img/filezilla.png" title="Client ftp : Filezilla" /><img src="img/firefox.png" title="Navigateur : Firefox" /></p>
+</section><section id="utilité-de-php" class="slide level3">
+<h3>Utilité de PHP</h3>
+<ul>
+<li>PHP permet :
+<ul>
+<li>d’accéder sur le serveur à des données d’une bases de données</li>
+<li>de gérer l’inclusion de fichiers dans les pages HTML</li>
+<li>de générer des pages HTML paramétrables à la volée</li>
+<li>de modifier les pages renvoyées par le serveur</li>
+</ul></li>
+<li>PHP nécessite un moteur PHP qui va transformer le code source PHP en code interprété</li>
+</ul>
+</section><section id="linstruction-echo" class="slide level3">
+<h3>3.1. L’instruction echo</h3>
+<ul>
+<li>PHP va nous permettre de modifier le contenu de la page renvoyée par le serveur</li>
+<li>On va ajouter du code PHP dans notre fichier en HTML5 : on veut écrire un autre paragraphe dans le fichier HTML</li>
+<li>On ouvre le PHP avec “<code>&lt;?php</code>” et on ferme le PHP avec “<code>?&gt;</code>”</li>
+<li>L’instruction “echo” est suivie d’une <strong>chaîne de caractères</strong></li>
+</ul>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="moncode001-8"><a href="#moncode001-8"></a>        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></span>
+<span id="moncode001-9"><a href="#moncode001-9"></a>        <span class="kw">&lt;?php</span></span>
+<span id="moncode001-10"><a href="#moncode001-10"></a>            echo &#39;Un autre paragraphe...&#39;;</span>
+<span id="moncode001-11"><a href="#moncode001-11"></a>        <span class="kw">?&gt;</span></span>
+<span id="moncode001-12"><a href="#moncode001-12"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="moncode001-13"><a href="#moncode001-13"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</section><section id="linstruction-echo-1" class="slide level3">
+<h3>3.1. L’instruction echo</h3>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="moncode001-8"><a href="#moncode001-8"></a>        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></span>
+<span id="moncode001-9"><a href="#moncode001-9"></a>        <span class="kw">&lt;?</span></span>
+<span id="moncode001-10"><a href="#moncode001-10"></a>            echo &#39;Un autre paragraphe...&#39;;</span>
+<span id="moncode001-11"><a href="#moncode001-11"></a>        <span class="kw">?&gt;</span></span>
+<span id="moncode001-12"><a href="#moncode001-12"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="moncode001-13"><a href="#moncode001-13"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</section><section id="linstruction-echo-2" class="slide level3">
+<h3>3.1. L’instruction echo</h3>
+<div class="sourceCode" id="moncode001"><pre class="sourceCode html"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;fr&quot;</span><span class="kw">&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="moncode001-8"><a href="#moncode001-8"></a>        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></span>
+<span id="moncode001-9"><a href="#moncode001-9"></a>        <span class="kw">&lt;?php</span></span>
+<span id="moncode001-10"><a href="#moncode001-10"></a>            echo &#39;Un autre paragraphe...&#39;;</span>
+<span id="moncode001-11"><a href="#moncode001-11"></a>        <span class="kw">?&gt;</span></span>
+<span id="moncode001-12"><a href="#moncode001-12"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="moncode001-13"><a href="#moncode001-13"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</section><section id="exemple-de-maths" class="slide level3">
+<h3>Exemple de maths…</h3>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></msqrt></mrow><annotation encoding="application/x-tex">f(x)=\sqrt{x^2+1}</annotation></semantics></math></p>
+<p>To produce an HTML/javascript slide show, simply type pandoc -t revealjs -s cm1.txt -o cm1.html</p>
+<div class="sourceCode" id="moncode001" data-startFrom="1"><pre class="sourceCode numberSource html numberLines"><code class="sourceCode html"><span id="moncode001-1"><a href="#moncode001-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="moncode001-2"><a href="#moncode001-2"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="moncode001-3"><a href="#moncode001-3"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="moncode001-4"><a href="#moncode001-4"></a>        <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;utf-8&quot;</span> <span class="kw">/&gt;</span></span>
+<span id="moncode001-5"><a href="#moncode001-5"></a>        <span class="kw">&lt;title&gt;</span>Ma page HTML5<span class="kw">&lt;/title&gt;</span></span>
+<span id="moncode001-6"><a href="#moncode001-6"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="moncode001-7"><a href="#moncode001-7"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="moncode001-8"><a href="#moncode001-8"></a>        <span class="kw">&lt;p&gt;</span>Mon premier paragraphe écrit en HTML5 !<span class="kw">&lt;/p&gt;</span></span>
+<span id="moncode001-9"><a href="#moncode001-9"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="moncode001-10"><a href="#moncode001-10"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</section>
+<!-- {{{{ dzslides core
+#
+#
+#     __  __  __       .  __   ___  __
+#    |  \  / /__` |    | |  \ |__  /__`
+#    |__/ /_ .__/ |___ | |__/ |___ .__/ core :€
+#
+#
+# The following block of code is not supposed to be edited.
+# But if you want to change the behavior of these slides,
+# feel free to hack it!
+#
+-->
+
+<div id="progress-bar"></div>
+
+<!-- Default Style -->
+<style>
+  * { margin: 0; padding: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+  [role="note"] { display: none; }
+  body {
+    width: 800px; height: 600px;
+    margin-left: -400px; margin-top: -300px;
+    position: absolute; top: 50%; left: 50%;
+    overflow: hidden;
+    display: none;
+  }
+  .view body {
+    position: static;
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    display: inline-block;
+    overflow: visible; overflow-x: hidden;
+    /* undo Dz.onresize */
+    transform: none !important;
+    -moz-transform: none !important;
+    -webkit-transform: none !important;
+    -o-transform: none !important;
+    -ms-transform: none !important;
+  }
+  .view head, .view head > title { display: block }
+  section {
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 100%;
+  }
+  .view section {
+    pointer-events: auto;
+    position: static;
+    width: 800px; height: 600px;
+    margin: -150px -200px;
+    float: left;
+
+    transform: scale(.4);
+    -moz-transform: scale(.4);
+    -webkit-transform: scale(.4);
+    -o-transform: scale(.4);
+    -ms-transform: scale(.4);
+  }
+  .view section > * { pointer-events: none; }
+  section[aria-selected] { pointer-events: auto; }
+  html { overflow: hidden; }
+  html.view { overflow: visible; }
+  body.loaded { display: block; }
+  .incremental {visibility: hidden; }
+  .incremental[active] {visibility: visible; }
+  #progress-bar{
+    bottom: 0;
+    position: absolute;
+    -moz-transition: width 400ms linear 0s;
+    -webkit-transition: width 400ms linear 0s;
+    -ms-transition: width 400ms linear 0s;
+    transition: width 400ms linear 0s;
+  }
+  .view #progress-bar {
+    display: none;
+  }
+</style>
+
+<script>
+  var Dz = {
+    remoteWindows: [],
+    idx: -1,
+    step: 0,
+    html: null,
+    slides: null,
+    progressBar : null,
+    params: {
+      autoplay: "1"
+    }
+  };
+
+  Dz.init = function() {
+    document.body.className = "loaded";
+    this.slides = Array.prototype.slice.call($$("body > section"));
+    this.progressBar = $("#progress-bar");
+    this.html = document.body.parentNode;
+    this.setupParams();
+    this.onhashchange();
+    this.setupTouchEvents();
+    this.onresize();
+    this.setupView();
+  }
+
+  Dz.setupParams = function() {
+    var p = window.location.search.substr(1).split('&');
+    p.forEach(function(e, i, a) {
+      var keyVal = e.split('=');
+      Dz.params[keyVal[0]] = decodeURIComponent(keyVal[1]);
+    });
+  // Specific params handling
+    if (!+this.params.autoplay)
+      $$.forEach($$("video"), function(v){ v.controls = true });
+  }
+
+  Dz.onkeydown = function(aEvent) {
+    // Don't intercept keyboard shortcuts
+    if (aEvent.altKey
+      || aEvent.ctrlKey
+      || aEvent.metaKey
+      || aEvent.shiftKey) {
+      return;
+    }
+    if ( aEvent.keyCode == 37 // left arrow
+      || aEvent.keyCode == 38 // up arrow
+      || aEvent.keyCode == 33 // page up
+    ) {
+      aEvent.preventDefault();
+      this.back();
+    }
+    if ( aEvent.keyCode == 39 // right arrow
+      || aEvent.keyCode == 40 // down arrow
+      || aEvent.keyCode == 34 // page down
+    ) {
+      aEvent.preventDefault();
+      this.forward();
+    }
+    if (aEvent.keyCode == 35) { // end
+      aEvent.preventDefault();
+      this.goEnd();
+    }
+    if (aEvent.keyCode == 36) { // home
+      aEvent.preventDefault();
+      this.goStart();
+    }
+    if (aEvent.keyCode == 32) { // space
+      aEvent.preventDefault();
+      this.toggleContent();
+    }
+    if (aEvent.keyCode == 70) { // f
+      aEvent.preventDefault();
+      this.goFullscreen();
+    }
+    if (aEvent.keyCode == 79) { // o
+      aEvent.preventDefault();
+      this.toggleView();
+    }
+  }
+
+  /* Touch Events */
+
+  Dz.setupTouchEvents = function() {
+    var orgX, newX;
+    var tracking = false;
+
+    var db = document.body;
+    db.addEventListener("touchstart", start.bind(this), false);
+    db.addEventListener("touchmove", move.bind(this), false);
+
+    function start(aEvent) {
+      aEvent.preventDefault();
+      tracking = true;
+      orgX = aEvent.changedTouches[0].pageX;
+    }
+
+    function move(aEvent) {
+      if (!tracking) return;
+      newX = aEvent.changedTouches[0].pageX;
+      if (orgX - newX > 100) {
+        tracking = false;
+        this.forward();
+      } else {
+        if (orgX - newX < -100) {
+          tracking = false;
+          this.back();
+        }
+      }
+    }
+  }
+
+  Dz.setupView = function() {
+    document.body.addEventListener("click", function ( e ) {
+      if (!Dz.html.classList.contains("view")) return;
+      if (!e.target || e.target.nodeName != "SECTION") return;
+
+      Dz.html.classList.remove("view");
+      Dz.setCursor(Dz.slides.indexOf(e.target) + 1);
+    }, false);
+  }
+
+  /* Adapt the size of the slides to the window */
+
+  Dz.onresize = function() {
+    var db = document.body;
+    var sx = db.clientWidth / window.innerWidth;
+    var sy = db.clientHeight / window.innerHeight;
+    var transform = "scale(" + (1/Math.max(sx, sy)) + ")";
+
+    db.style.MozTransform = transform;
+    db.style.WebkitTransform = transform;
+    db.style.OTransform = transform;
+    db.style.msTransform = transform;
+    db.style.transform = transform;
+  }
+
+
+  Dz.getNotes = function(aIdx) {
+    var s = $("section:nth-of-type(" + aIdx + ")");
+    var d = s.$("[role='note']");
+    return d ? d.innerHTML : "";
+  }
+
+  Dz.onmessage = function(aEvent) {
+    var argv = aEvent.data.split(" "), argc = argv.length;
+    argv.forEach(function(e, i, a) { a[i] = decodeURIComponent(e) });
+    var win = aEvent.source;
+    if (argv[0] === "REGISTER" && argc === 1) {
+      this.remoteWindows.push(win);
+      this.postMsg(win, "REGISTERED", document.title, this.slides.length);
+      this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+      return;
+    }
+    if (argv[0] === "BACK" && argc === 1)
+      this.back();
+    if (argv[0] === "FORWARD" && argc === 1)
+      this.forward();
+    if (argv[0] === "START" && argc === 1)
+      this.goStart();
+    if (argv[0] === "END" && argc === 1)
+      this.goEnd();
+    if (argv[0] === "TOGGLE_CONTENT" && argc === 1)
+      this.toggleContent();
+    if (argv[0] === "SET_CURSOR" && argc === 2)
+      window.location.hash = "#" + argv[1];
+    if (argv[0] === "GET_CURSOR" && argc === 1)
+      this.postMsg(win, "CURSOR", this.idx + "." + this.step);
+    if (argv[0] === "GET_NOTES" && argc === 1)
+      this.postMsg(win, "NOTES", this.getNotes(this.idx));
+  }
+
+  Dz.toggleContent = function() {
+    // If a Video is present in this new slide, play it.
+    // If a Video is present in the previous slide, stop it.
+    var s = $("section[aria-selected]");
+    if (s) {
+      var video = s.$("video");
+      if (video) {
+        if (video.ended || video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    }
+  }
+
+  Dz.setCursor = function(aIdx, aStep) {
+    // If the user change the slide number in the URL bar, jump
+    // to this slide.
+    aStep = (aStep != 0 && typeof aStep !== "undefined") ? "." + aStep : ".0";
+    window.location.hash = "#" + aIdx + aStep;
+  }
+
+  Dz.onhashchange = function() {
+    var cursor = window.location.hash.split("#"),
+        newidx = 1,
+        newstep = 0;
+    if (cursor.length == 2) {
+      newidx = ~~cursor[1].split(".")[0];
+      newstep = ~~cursor[1].split(".")[1];
+      if (newstep > Dz.slides[newidx - 1].$$('.incremental > *').length) {
+        newstep = 0;
+        newidx++;
+      }
+    }
+    this.setProgress(newidx, newstep);
+    if (newidx != this.idx) {
+      this.setSlide(newidx);
+    }
+    if (newstep != this.step) {
+      this.setIncremental(newstep);
+    }
+    for (var i = 0; i < this.remoteWindows.length; i++) {
+      this.postMsg(this.remoteWindows[i], "CURSOR", this.idx + "." + this.step);
+    }
+  }
+
+  Dz.back = function() {
+    if (this.idx == 1 && this.step == 0) {
+      return;
+    }
+    if (this.step == 0) {
+      this.setCursor(this.idx - 1,
+                     this.slides[this.idx - 2].$$('.incremental > *').length);
+    } else {
+      this.setCursor(this.idx, this.step - 1);
+    }
+  }
+
+  Dz.forward = function() {
+    if (this.idx >= this.slides.length &&
+        this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+        return;
+    }
+    if (this.step >= this.slides[this.idx - 1].$$('.incremental > *').length) {
+      this.setCursor(this.idx + 1, 0);
+    } else {
+      this.setCursor(this.idx, this.step + 1);
+    }
+  }
+
+  Dz.goStart = function() {
+    this.setCursor(1, 0);
+  }
+
+  Dz.goEnd = function() {
+    var lastIdx = this.slides.length;
+    var lastStep = this.slides[lastIdx - 1].$$('.incremental > *').length;
+    this.setCursor(lastIdx, lastStep);
+  }
+
+  Dz.toggleView = function() {
+    this.html.classList.toggle("view");
+
+    if (this.html.classList.contains("view")) {
+      $("section[aria-selected]").scrollIntoView(true);
+    }
+  }
+
+  Dz.setSlide = function(aIdx) {
+    this.idx = aIdx;
+    var old = $("section[aria-selected]");
+    var next = $("section:nth-of-type("+ this.idx +")");
+    if (old) {
+      old.removeAttribute("aria-selected");
+      var video = old.$("video");
+      if (video) {
+        video.pause();
+      }
+    }
+    if (next) {
+      next.setAttribute("aria-selected", "true");
+      if (this.html.classList.contains("view")) {
+        next.scrollIntoView();
+      }
+      var video = next.$("video");
+      if (video && !!+this.params.autoplay) {
+        video.play();
+      }
+    } else {
+      // That should not happen
+      this.idx = -1;
+      // console.warn("Slide doesn't exist.");
+    }
+  }
+
+  Dz.setIncremental = function(aStep) {
+    this.step = aStep;
+    var old = this.slides[this.idx - 1].$('.incremental > *[aria-selected]');
+    if (old) {
+      old.removeAttribute('aria-selected');
+    }
+    var incrementals = $$('.incremental');
+    if (this.step <= 0) {
+      $$.forEach(incrementals, function(aNode) {
+        aNode.removeAttribute('active');
+      });
+      return;
+    }
+    var next = this.slides[this.idx - 1].$$('.incremental > *')[this.step - 1];
+    if (next) {
+      next.setAttribute('aria-selected', true);
+      next.parentNode.setAttribute('active', true);
+      var found = false;
+      $$.forEach(incrementals, function(aNode) {
+        if (aNode != next.parentNode)
+          if (found)
+            aNode.removeAttribute('active');
+          else
+            aNode.setAttribute('active', true);
+        else
+          found = true;
+      });
+    } else {
+      setCursor(this.idx, 0);
+    }
+    return next;
+  }
+
+  Dz.goFullscreen = function() {
+    var html = $('html'),
+        requestFullscreen = html.requestFullscreen || html.requestFullScreen || html.mozRequestFullScreen || html.webkitRequestFullScreen;
+    if (requestFullscreen) {
+      requestFullscreen.apply(html);
+    }
+  }
+  
+  Dz.setProgress = function(aIdx, aStep) {
+    var slide = $("section:nth-of-type("+ aIdx +")");
+    if (!slide)
+      return;
+    var steps = slide.$$('.incremental > *').length + 1,
+        slideSize = 100 / (this.slides.length - 1),
+        stepSize = slideSize / steps;
+    this.progressBar.style.width = ((aIdx - 1) * slideSize + aStep * stepSize) + '%';
+  }
+  
+  Dz.postMsg = function(aWin, aMsg) { // [arg0, [arg1...]]
+    aMsg = [aMsg];
+    for (var i = 2; i < arguments.length; i++)
+      aMsg.push(encodeURIComponent(arguments[i]));
+    aWin.postMessage(aMsg.join(" "), "*");
+  }
+  
+  function init() {
+    Dz.init();
+    window.onkeydown = Dz.onkeydown.bind(Dz);
+    window.onresize = Dz.onresize.bind(Dz);
+    window.onhashchange = Dz.onhashchange.bind(Dz);
+    window.onmessage = Dz.onmessage.bind(Dz);
+  }
+
+  window.onload = init;
+</script>
+
+
+<script> // Helpers
+  if (!Function.prototype.bind) {
+    Function.prototype.bind = function (oThis) {
+
+      // closest thing possible to the ECMAScript 5 internal IsCallable
+      // function 
+      if (typeof this !== "function")
+      throw new TypeError(
+        "Function.prototype.bind - what is trying to be fBound is not callable"
+      );
+
+      var aArgs = Array.prototype.slice.call(arguments, 1),
+          fToBind = this,
+          fNOP = function () {},
+          fBound = function () {
+            return fToBind.apply( this instanceof fNOP ? this : oThis || window,
+                   aArgs.concat(Array.prototype.slice.call(arguments)));
+          };
+
+      fNOP.prototype = this.prototype;
+      fBound.prototype = new fNOP();
+
+      return fBound;
+    };
+  }
+
+  var $ = (HTMLElement.prototype.$ = function(aQuery) {
+    return this.querySelector(aQuery);
+  }).bind(document);
+
+  var $$ = (HTMLElement.prototype.$$ = function(aQuery) {
+    return this.querySelectorAll(aQuery);
+  }).bind(document);
+
+  $$.forEach = function(nodeList, fun) {
+    Array.prototype.forEach.call(nodeList, fun);
+  }
+
+</script>
+<!-- vim: set fdm=marker: }}} -->
+</body>
+</html>
